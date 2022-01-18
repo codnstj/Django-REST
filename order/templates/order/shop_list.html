@@ -1,0 +1,6 @@
+ <h1>음식점 리스트</h1>
+    {% for shop in shop_list %}
+        <h5>{{ shop.shop_name }}</h5>
+        <h5>{{ shop.shop_address }}</h5>
+        <hr>
+    {% endfor %}
