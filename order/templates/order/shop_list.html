@@ -1,6 +1,18 @@
- <h1>음식점 리스트</h1>
-    {% for shop in shop_list %}
-        <h5>{{ shop.shop_name }}</h5>
-        <h5>{{ shop.shop_address }}</h5>
-        <hr>
-    {% endfor %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>음식점 리스트</h1>
+        {% for shop in shop_list %}
+            <a href="/order/menus/{{ shop.id }}">{{ shop.shop_name }}</a>
+            <h5>{{ shop.shop_address }}</h5>
+            <hr>
+        {% endfor %}
+</body>
+</html>

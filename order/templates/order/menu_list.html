@@ -8,10 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>음식점 리스트</h1>
-        {% for shop in shop_list %}
-            <h5 href="{%  url 'menu' %}">{{ shop.shop_name }}</h5>
-            <h5>{{ shop.shop_address }}</h5>
+    <h1>메뉴</h1>
+        {% for menu in menu_list %}
+            <h5>{{ menu.food_name }}</h5>
             <hr>
         {% endfor %}
 </body>
