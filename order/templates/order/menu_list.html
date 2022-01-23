@@ -1,17 +1,15 @@
-<!doctype html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>메뉴</h1>
+<form method="post" action="{% url 'order' %}">
+    <ol>
+        <h4>1. 주문하실 음식을 골라주세요.</h4>
         {% for menu in menu_list %}
-            <h5>{{ menu.food_name }}</h5>
-            <hr>
+            <input type="checkbox" id="menu{{ forloop.counter }}" name="menu" value="{{ menu.food_name }}">
+            <label for="menu{{ forloop.counter }}"> {{ menu.food_name }} </label><br>
         {% endfor %}
-</body>
-</html>
+    </ol>
+    <ol>
+        <h4>2. 집주소를 알려주세요.</h4>
+        <input type="text" name="address" required>
+    </ol>
+    <input type='hidden' name="shop" value="{{shop}}">
+    <input type="submit" value="주문완료하기">
+</form>
