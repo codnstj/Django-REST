@@ -1,8 +1,6 @@
 from django.urls import path
-from order import views
+from delivery import views
 
 urlpatterns = [
-    path('shops/', views.shop, name='shop'),
-    path('menus/<int:shop>/', views.menu, name='menu'),
-    path('order/', views.order, name='order'),
+    path('orders/',views.order_list, name='order_list'),
 ]
